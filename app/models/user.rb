@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :recipes
   has_many :ingredients
 
-  validates :email, :username, presence: true
+  validates :email, :name, presence: true
   validates :email, uniqueness: true
   validates :password, length: { minimum: 8 }
 end

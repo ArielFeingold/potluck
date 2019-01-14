@@ -3,7 +3,7 @@ class CreateIngredients < ActiveRecord::Migration[5.2]
     create_table :ingredients do |t|
       t.string :name
       t.string :unit
-
+      t.integer :user_id
       t.timestamps
     end
   end
