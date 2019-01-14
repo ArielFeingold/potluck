@@ -1,4 +1,3 @@
-require 'pry-remote'
 module Api::V1
     class RecipesController < ApplicationController
     before_action :authenticate_user, only: [:index, :show]
