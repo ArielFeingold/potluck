@@ -10,9 +10,22 @@ module Api::V1
         end
 
         def show
+            ingredient = Ingredient.find_by(id: params[:id])
         end
 
-
+        def update
+            ingredient = Ingredient.find_by(id: params[:id])
+            if ingredient.update(ingredient_params)
+                render json: {status: 200, ingredient: ingredient}
+            else
+                render json: {status: 400, errors: ingredient.errors.messages}
+            end
+        end
+        
+        def destroy
+            Ingredient.find_by(id: params[:id]).destroy
+        end
+    
         private
 
         def ingredient_params
